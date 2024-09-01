@@ -1,10 +1,23 @@
 <script>
     import { fade } from 'svelte/transition';
     import {onMount} from 'svelte';
+    import lottie from 'lottie-web';
     import Step from "./Step.svelte";
     import VideoPlayer from './VideoPlayer.svelte';
 
-    const videoSrc = '/animate.gif';
+    // let animationContainer;
+
+    // onMount(() => {
+    //     lottie.loadAnimation({
+    //         container: animationContainer,
+    //         renderer: 'svg',
+    //         loop: true,
+    //         autoplay: true,
+    //         path: '../static/coding.json' 
+    //     });
+    // });
+
+    // const videoSrc = '/animate.gif';
     let steps = [
         {
             name: "Add to cart",
@@ -64,21 +77,25 @@
     },
 ];
 
- const skills = [
-        { name: 'C', icon: 'fas fa-laptop-code', color: '#2C3E50' },
-        { name: 'Java', icon: 'fab fa-java', color: '#F89820' },
-        { name: 'JavaScript', icon: 'fab fa-js', color: '#F7E04C' },
-        { name: 'React', icon: 'fab fa-react', color: '#61DAFB' },
-        { name: 'Angular', icon: 'fab fa-angular', color: '#DD0031' },
-        { name: 'Svelte', icon: 'fab fa-svelte', color: '#FF3E00' },
-        { name: 'MySQL', icon: 'fas fa-database', color: '#00758F' },
-        { name: 'MongoDB', icon: 'fas fa-database', color: '#4DB33D' },
-        { name: 'Tailwind CSS', icon: 'fab fa-css3-alt', color: '#06B6D4' },
-        { name: 'Ant Design', icon: 'fas fa-paint-brush', color: '#0170FE' },
-        { name: 'Python', icon: 'fab fa-python', color: '#306998' },
-        { name: 'Node.js', icon: 'fab fa-node', color: '#8CC84B' },
-        { name: 'Express', icon: 'fas fa-server', color: '#000000' }
-    ];
+const skills = [
+    { name: 'C', icon: 'fas fa-laptop-code', color: '#2C3E50' },
+    { name: 'Java', icon: 'fab fa-java', color: '#F89820' },
+    { name: 'JavaScript', icon: 'fab fa-js', color: '#F7E04C' },
+    { name: 'React', icon: 'fab fa-react', color: '#61DAFB' },
+    { name: 'Angular', icon: 'fab fa-angular', color: '#DD0031' },
+    { name: 'Svelte', icon: 'fab fa-svelte', color: '#FF3E00' },
+    { name: 'HTML', icon: 'fab fa-html5', color: '#E34F26' },
+    { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572B6' },
+    { name: 'Next.js', icon: 'fab fa-js-square', color: '#000000' },
+    { name: 'MySQL', icon: 'fas fa-database', color: '#00758F' },
+    { name: 'MongoDB', icon: 'fas fa-leaf', color: '#4DB33D' },
+    { name: 'Tailwind CSS', icon: 'fab fa-css3-alt', color: '#06B6D4' },
+    { name: 'Ant Design', icon: 'fas fa-paint-brush', color: '#0170FE' },
+    { name: 'Python', icon: 'fab fa-python', color: '#306998' },
+    { name: 'Node.js', icon: 'fab fa-node', color: '#8CC84B' },
+    { name: 'Express', icon: 'fas fa-server', color: '#000000' }
+];
+
         
     let showSkills = false
     let imageBounce = false
@@ -266,7 +283,7 @@
     </section>
     <section
         id="skills"
-        class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative"
+        class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative  overflow-x-hidden"
     >
         <div
             class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4"
@@ -278,21 +295,24 @@
                 My <span class="poppins text-violet-400">Skills</span>
             </h3>
         </div>
-        <div class='flex md:flex-row flex-col justify-between items-center'>
-        <VideoPlayer src={videoSrc} width="600" height="600" class="md:block hidden"/>
-        {#if showSkills}
-            <div class="flex flex-wrap justify-center gap-6">
+        <div class='flex md:flex-row flex-col justify-between items-center gap-8 '>
+        <!-- <VideoPlayer width="600" height="600"/> -->
+        <!-- <div bind:this={animationContainer} style="width: 200px; height: 200px;" class="bg-transparent"></div> -->
+        <VideoPlayer src={"../coding.webm"} height="200px" width="200px"/>
+        <!-- {#if showSkills} -->
+            <div class="flex flex-wrap justify-center gap-4">
                 {#each skills as skill, i (skill.name)}
                     <div
                         class="flex items-center gap-2 bg-transparent border border-transparent hover:border-violet-900 rounded-full py-2 px-4 transition duration-300"
                         in:fade={{ delay: 250 * i, duration: 300 }}
                     >
                         <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
-                        <span class="text-lg">{skill.name}</span>
+                        <span class="md:text-lg text-sm">{skill.name}</span>
                     </div>
                 {/each}
             </div>
-        {/if}
+        <!-- {/if} -->
+        
         </div>
     </section>
     
