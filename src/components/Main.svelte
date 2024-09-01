@@ -1,5 +1,6 @@
 <script>
     import { fade } from 'svelte/transition';
+    import {onMount} from 'svelte';
     import Step from "./Step.svelte";
 
     let steps = [
@@ -77,7 +78,14 @@
         { name: 'Express', icon: 'fas fa-server', color: '#000000' }
     ];
         
+    let showSkills = false
 
+    onMount(() => {
+        // Introduce a slight delay to ensure the component has mounted
+        setTimeout(() => {
+            showSkills = true;
+        }, 100); // 100ms delay
+    });
 </script>
 
 <main class="flex flex-col flex-1 p-4">
@@ -266,22 +274,25 @@
             class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4"
         >
             <h6 class="text-large sm:text-xl md:text-2xl">
-                Skills & Technologies
+                Skills I've honed over the years
             </h6>
             <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
                 My <span class="poppins text-violet-400">Skills</span>
             </h3>
         </div>
-        <div class="flex flex-wrap justify-center gap-6">
-    {#each skills as skill, i (skill.name)}
-        <div class="fade-wrapper" in:fade={{ delay: 250 * i, duration: 300 }}>
-            <div class="flex items-center gap-2 bg-transparent border border-transparent hover:border-violet-900 rounded-full py-2 px-4 transition duration-300">
-                <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
-                <span class="text-lg">{skill.name}</span>
+        {#if showSkills}
+            <div class="flex flex-wrap justify-center gap-6">
+                {#each skills as skill, i (skill.name)}
+                    <div
+                        class="flex items-center gap-2 bg-transparent border border-transparent hover:border-violet-900 rounded-full py-2 px-4 transition duration-300"
+                        in:fade={{ delay: 250 * i, duration: 300 }}
+                    >
+                        <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
+                        <span class="text-lg">{skill.name}</span>
+                    </div>
+                {/each}
             </div>
-        </div>
-    {/each}
-</div>
+        {/if}
     </section>
     
   </section>
