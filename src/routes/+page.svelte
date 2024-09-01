@@ -1,5 +1,7 @@
+<!-- App.svelte -->
 <script>
-import Main from '../components/Main.svelte';
+    import LandingPage from '../components/Main.svelte';
 </script>
 
-<Main />
+    <LandingPage />
+

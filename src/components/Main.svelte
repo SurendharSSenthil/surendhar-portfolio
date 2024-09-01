@@ -2,7 +2,9 @@
     import { fade } from 'svelte/transition';
     import {onMount} from 'svelte';
     import Step from "./Step.svelte";
+    import VideoPlayer from './VideoPlayer.svelte';
 
+    const videoSrc = '/animate.gif';
     let steps = [
         {
             name: "Add to cart",
@@ -79,13 +81,17 @@
     ];
         
     let showSkills = false
+    let imageBounce = false
 
     onMount(() => {
-        // Introduce a slight delay to ensure the component has mounted
-        setTimeout(() => {
-            showSkills = true;
-        }, 100); // 100ms delay
-    });
+    // Trigger skills display after a delay
+    setTimeout(() => {
+      showSkills = true;
+    }, 100); // 100ms delay
+
+    // Trigger image bounce on load
+    imageBounce = true;
+  });
 </script>
 
 <main class="flex flex-col flex-1 p-4">
@@ -123,20 +129,14 @@
 </div> -->
 
         <div  class="flex p-0.5 relative max-w-[700px] w-full mx-auto">
-            <div
-                class="absolute inset-0 overflow-hidden rounded-md flex items-center justify-center"
-            >
-                <div
-                    class="hover:bg-gradient-to-r absolute inset-[-20px]  from-violet-800 to-indigo-800 specialSpin"
-                />
-            </div>
 
             <img
                 src={"../profile.png"}
                 alt="Profile"
                 class="w-full h-full object-cover z-[2]"
-                width="50px"
-                height="50px"
+                
+      class:bounce-once={imageBounce}
+      on:animationend={() => (imageBounce = false)}
             />
         </div>
          <!-- <img
@@ -216,21 +216,19 @@
             I am . . .
         </p>
         <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
-            {#each benefits as benefit, index}
-                <div class="flex gap-6 sm:gap-8">
-                    <p
-                        class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold"
-                    >
-                        0{index + 1}
-                    </p>
-                    <div class="flex flex-col gap-6 sm:gap-8">
-                        <h3 class="text-2xl sm:text-3xl md:text-5xl">
-                            {benefit.name}
-                        </h3>
-                        <p>{benefit.description}</p>
-                    </div>
-                </div>
-            {/each}
+            {#each benefits as benefit, index (benefit.name)}
+    <div class="flex gap-6 sm:gap-8" in:fade={{ duration: 400 }}>
+        <p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">
+            0{index + 1}
+        </p>
+        <div class="flex flex-col gap-6 sm:gap-8">
+            <h3 class="text-2xl sm:text-3xl md:text-5xl">
+                {benefit.name}
+            </h3>
+            <p>{benefit.description}</p>
+        </div>
+    </div>
+{/each}
         </div>
         <section
         id="github-contributions"
@@ -280,6 +278,8 @@
                 My <span class="poppins text-violet-400">Skills</span>
             </h3>
         </div>
+        <div class='flex md:flex-row flex-col justify-between items-center'>
+        <VideoPlayer src={videoSrc} width="600" height="600" class="md:block hidden"/>
         {#if showSkills}
             <div class="flex flex-wrap justify-center gap-6">
                 {#each skills as skill, i (skill.name)}
@@ -293,6 +293,7 @@
                 {/each}
             </div>
         {/if}
+        </div>
     </section>
     
   </section>
@@ -303,4 +304,19 @@
 .fade-wrapper {
     transition: opacity 0.3s ease-in-out;
 }
+.bounce-once {
+    animation: bounce 2s ease;
+  }
+
+  @keyframes bounce {
+    0%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
 </style>
