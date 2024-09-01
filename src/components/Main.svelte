@@ -18,6 +18,13 @@
                 href: "https://surendhar-react-weather-app.netlify.app/"
         },
         {
+            name: "Portfolio",
+            icon: "fa-regular fa-user",
+            description:
+                "This is a portfolio website initially done using HTML, CSS and JavaScript.",
+                href: "https://surendhar-portfolio.netlify.app/"
+        },
+        {
             name: "Feedback app",
             icon: "fa-regular fa-comment",
             description:
@@ -38,13 +45,13 @@
         metric: "Versatile",
         name: "a passionate full-stack developer",
         description:
-            "With a deep understanding of both frontend and backend technologies, I excel in building robust and scalable web applications. My journey includes mastering JavaScript frameworks, diving into deep learning, and integrating modern tools like Firebase and Docker, ensuring that I can tackle diverse technical challenges.",
+            "With a good understanding of both frontend and backend technologies, I excel in building robust and scalable web applications. My journey includes mastering JavaScript frameworks, diving into deep learning, ensuring that I can tackle diverse technical challenges.",
     },
     {
         metric: "Innovative",
         name: "a problem-solving enthusiast",
         description:
-            "I thrive on finding creative solutions to complex problems. Whether it's optimizing code for performance or designing intuitive user interfaces, I am dedicated to leveraging the latest technologies and methodologies to craft elegant and effective solutions.",
+            "I thrive on finding creative solutions to problems. Whether it's optimizing code for performance or designing intuitive user interfaces, I am dedicated to leveraging the latest technologies and methodologies to craft elegant and effective solutions.",
     },
     {
         metric: "Detail-oriented",
@@ -136,7 +143,7 @@
             </h6>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
-            <Step step={steps[0]}>
+            <Step step={steps[1]}>
     <p>
         The Weather App is an application developed with <strong
             class="text-violet-400"
@@ -144,8 +151,16 @@
         >. It provides real-time weather updates by fetching data from a reliable API. The app features a responsive design for an engaging user experience, ensuring accurate weather information at your fingertips.
     </p>
 </Step>
+            <Step step={steps[2]}>
+    <p>
+        The Portfolio is a website developed with <strong
+            class="text-violet-400"
+            >HTML, CSS and JavaScript</strong
+        >
+    </p>
+</Step>
 
-            <Step step={steps[1]}>
+            <Step step={steps[0]}>
     <p>
         The Add to Cart app is a seamless shopping experience created with <strong
             class="text-violet-400"
@@ -153,7 +168,7 @@
         >. It allows users to manage their shopping cart in real-time and a smooth checkout process. The app's integration with Firebase ensures real-time synchronization and a responsive user interface.
     </p>
 </Step>
-            <Step step={steps[2]}>
+            <Step step={steps[3]}>
     <p>
         The Feedback App is an efficient feedback collection and management tool built with <strong
             class="text-violet-400"
@@ -163,7 +178,7 @@
 </Step>
 
 
-            <Step step={steps[3]}>
+            <Step step={steps[4]}>
     <p>
         The Attendance Management System is a powerful tool built with <strong
             class="text-violet-400"
@@ -257,15 +272,24 @@
                 My <span class="poppins text-violet-400">Skills</span>
             </h3>
         </div>
-        <div class="flex flex-wrap justify-center gap-6" in:fade={{ duration: 500 }}>
-            {#each skills as skill}
-                <div class="flex items-center gap-2 bg-transparent border-violet-950 border-1 rounded-full py-2 px-4">
-                    <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
-                    <span class="text-lg">{skill.name}</span>
-                </div>
-            {/each}
+        <div class="flex flex-wrap justify-center gap-6">
+    {#each skills as skill, i (skill.name)}
+        <div class="fade-wrapper" in:fade={{ delay: 250 * i, duration: 300 }}>
+            <div class="flex items-center gap-2 bg-transparent border border-transparent hover:border-violet-900 rounded-full py-2 px-4 transition duration-300">
+                <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
+                <span class="text-lg">{skill.name}</span>
+            </div>
         </div>
+    {/each}
+</div>
     </section>
     
   </section>
 </main>
+
+
+<style>
+.fade-wrapper {
+    transition: opacity 0.3s ease-in-out;
+}
+</style>
