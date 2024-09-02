@@ -104,36 +104,11 @@ const skills = [
     // Trigger skills display after a delay
     setTimeout(() => {
       showSkills = true;
-    }, 100); 
-    console.log("hi")
-    const images = document.quesrySelectorAll('.skill-card');
+    }, 100); // 100ms delay
+
+    // Trigger image bounce on load
     imageBounce = true;
-const observerCallback = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Element is in view, remove the 'hidden' class to trigger the fade-in
-            entry.target.classList.remove('hidden');
-            entry.target.classList.add('visible');
-            
-        }
-    });
-    console.log("called observer")
-};
-
-// Create an Intersection Observer instance with a callback function
-const observer = new IntersectionObserver(observerCallback, {
-    root: null, // Default is the viewport
-    threshold: 0.3, // Trigger when 10% of the element is visible
-});
-console.log("images",images);
-// Observe each image
-images.forEach(image => {
-    observer.observe(image);
-});
   });
-
-
-
 </script>
 
 <main class="flex flex-col flex-1 p-4">
@@ -325,7 +300,6 @@ images.forEach(image => {
         <!-- <div bind:this={animationContainer} style="width: 200px; height: 200px;" class="bg-transparent"></div> -->
         <VideoPlayer src={"../coding.webm"} height="200px" width="200px"/>
         <!-- {#if showSkills} -->
-            <div class="hidden skill-card">
             <div class="flex flex-wrap justify-center gap-4">
                 {#each skills as skill, i (skill.name)}
                     <div
@@ -336,7 +310,6 @@ images.forEach(image => {
                         <span class="md:text-lg text-sm">{skill.name}</span>
                     </div>
                 {/each}
-            </div>
             </div>
         <!-- {/if} -->
         
@@ -366,14 +339,4 @@ images.forEach(image => {
       transform: translateY(-15px);
     }
   }
-  .hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 </style>
