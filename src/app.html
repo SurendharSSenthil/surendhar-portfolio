@@ -40,7 +40,7 @@
 				var particlesElement = document.getElementById("particles-js");
 
 				particlesElement.style.transform =
-					"translateY(" + scrollPosition * 0.5 + "px)";
+					"translateY(" + scrollPosition * 0.3 + "px)";
 			});
 		</script>
 	</body>
@@ -61,7 +61,7 @@
 	#particles-js {
 		position: absolute;
 		width: 100%;
-		height: 400vh;
+		height: 300vh;
 		top: 0;
 		left: 0;
 		z-index: -1;
@@ -74,30 +74,5 @@
 		z-index: 1;
 		padding: 20px;
 		text-align: center;
-	}
-
-	@media screen and (max-width: 700px) {
-		#particles-js {
-			position: absolute;
-			width: 100%;
-			height: 300vh;
-			top: 0;
-			left: 0;
-			z-index: -1;
-			transform: translateY(0);
-			transition: transform 0.1s ease-out;
-		}
-	}
-	@media screen and (max-width: 1000px) {
-		#particles-js {
-			position: absolute;
-			width: 100%;
-			height: 300vh;
-			top: 0;
-			left: 0;
-			z-index: -1;
-			transform: translateY(0);
-			transition: transform 0.1s ease-out;
-		}
 	}
 </style>
