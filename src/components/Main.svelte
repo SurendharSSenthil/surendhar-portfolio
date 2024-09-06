@@ -86,14 +86,14 @@ const skills = [
     { name: 'Svelte', icon: 'fab fa-svelte', color: '#FF3E00' },
     { name: 'HTML', icon: 'fab fa-html5', color: '#E34F26' },
     { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572B6' },
-    { name: 'Next.js', icon: 'fab fa-js-square', color: '#000000' },
+    { name: 'Next.js', icon: 'fab fa-js-square', color: '#61DAFB' },
     { name: 'MySQL', icon: 'fas fa-database', color: '#00758F' },
     { name: 'MongoDB', icon: 'fas fa-leaf', color: '#4DB33D' },
     { name: 'Tailwind CSS', icon: 'fab fa-css3-alt', color: '#06B6D4' },
     { name: 'Ant Design', icon: 'fas fa-paint-brush', color: '#0170FE' },
     { name: 'Python', icon: 'fab fa-python', color: '#306998' },
     { name: 'Node.js', icon: 'fab fa-node', color: '#8CC84B' },
-    { name: 'Express', icon: 'fas fa-server', color: '#000000' }
+    { name: 'Express', icon: 'fas fa-server', color: '#8CC84B' }
 ];
 
         
@@ -215,38 +215,43 @@ const skills = [
         </div>
     </section>
     <section
-        id="about"
-        class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative"
+    id="about"
+    class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative"
+>
+    <!-- Header Section with Animated Lines -->
+    <div
+        class="flex flex-col gap-2 text-center relative py-4 before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 before:transition-all before:duration-300 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 after:transition-all after:duration-300"
     >
-        <!-- <div class="z-[-1] bg-violet-950 w-screen left-1/2 -translate-x-1/2 top-0 h-full absolute"> </div> -->
-        <div
-            class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4"
-        >
-            <h6 class="text-large sm:text-xl md:text-2xl">
-                Want to know more?
-            </h6>
-            <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-                A bit <span class="poppins text-violet-400">about</span> me.
-            </h3>
-        </div>
-        <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">
-            I am . . .
-        </p>
-        <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
-            {#each benefits as benefit, index (benefit.name)}
-    <div class="flex gap-6 sm:gap-8" in:fade={{ duration: 400 }}>
-        <p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">
-            0{index + 1}
-        </p>
-        <div class="flex flex-col gap-6 sm:gap-8">
-            <h3 class="text-2xl sm:text-3xl md:text-5xl">
-                {benefit.name}
-            </h3>
-            <p>{benefit.description}</p>
-        </div>
+        <h6 class="text-large sm:text-xl md:text-2xl">
+            Want to know more?
+        </h6>
+        <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
+            A bit <span class="poppins text-violet-400">about</span> me.
+        </h3>
     </div>
-{/each}
+    <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">
+        I am . . .
+    </p>
+    <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
+        {#each benefits as benefit, index (benefit.name)}
+        <div class="group flex flex-col relative pb-2">
+            <div class="flex gap-6 sm:gap-8" in:fade={{ duration: 400 }}>
+                <p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">
+                    0{index + 1}
+                </p>
+                <div class="flex flex-col gap-6 sm:gap-8">
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl">
+                        {benefit.name}
+                    </h3>
+                    <p>{benefit.description}</p>
+                </div>
+            </div>
+            <!-- Animated Line with Gap -->
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 mt-4"></div>
         </div>
+        {/each}
+    </div>
+</section>
         <section
         id="github-contributions"
         class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-8 sm:gap-20 md:gap-10 relative"
@@ -303,7 +308,7 @@ const skills = [
             <div class="flex flex-wrap justify-center gap-4">
                 {#each skills as skill, i (skill.name)}
                     <div
-                        class="flex items-center gap-2 bg-transparent border border-transparent hover:border-violet-900 rounded-full py-2 px-4 transition duration-300"
+                        class="flex items-center gap-2 bg-transparent border border-transparent hover:border-violet-900 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/50 hover:glow rounded-full py-2 px-4 transition duration-300"
                         in:fade={{ delay: 250 * i, duration: 300 }}
                     >
                         <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
@@ -316,7 +321,7 @@ const skills = [
         </div>
     </section>
     
-  </section>
+
 </main>
 
 
@@ -327,6 +332,8 @@ const skills = [
 .bounce-once {
     animation: bounce 2s ease;
   }
+
+   
 
   @keyframes bounce {
     0%, 50%, 80%, 100% {
