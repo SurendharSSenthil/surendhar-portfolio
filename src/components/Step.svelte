@@ -16,11 +16,47 @@
         {step.name}
     </h3>
     <slot />
-    <div class="flex-1 flex justify-betweeen gap-4 items-end">
-        <div
-            class="ml-auto cursor-pointer hover:text-slate-950 hover:bg-white rounded-lg p-2 duration-200 relative after:absolute after:top-0 after:h-0 after:right-full after:bg-white after:w-full  after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"
-        >
-            <p class="z-4">Go to &rarr;</p>
-        </div>
+    <div class="flex-1 flex justify-between gap-4 items-end">
+        <button class="bg-slate-950 relative anim text-center">
+            Go to &rarr;
+        </button>
     </div>
 </a>
+
+<style>
+    .anim{
+        border-radius: 10px;
+        padding: 6px 10px;
+    }
+    @property --angle{
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+    }
+    .anim::after, .anim::before{
+        content: '';
+        position: absolute;
+        height: 104%;
+        width: 104%;
+        background-image: conic-gradient(from var(--angle),transparent 30%,violet, indigo, orange);
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        /* padding: 14px; */
+        border-radius: 10px;
+        animation: 2s spin linear infinite;
+
+    }
+    .anim::before{
+        filter: blur(1.5rem);
+        /* opacity: 0.7; */
+    }
+    @keyframes spin{
+        from{
+            --angle: 0deg;
+        }to{
+            --angle: 360deg;
+        }
+    }
+</style>

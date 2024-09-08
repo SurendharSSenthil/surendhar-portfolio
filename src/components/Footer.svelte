@@ -1,5 +1,10 @@
 <script>
 import contact from "/Contact.png";
+import {onMount} from 'svelte';
+
+onMount(() => {
+        console.log('Component mounted!');
+    });
 </script>
 
 <footer

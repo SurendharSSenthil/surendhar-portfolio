@@ -4,6 +4,7 @@
     import lottie from 'lottie-web';
     import Step from "./Step.svelte";
     import VideoPlayer from './VideoPlayer.svelte';
+    
 
     // let animationContainer;
 
@@ -17,7 +18,7 @@
     //     });
     // });
 
-    // const videoSrc = '/animate.gif';
+    // const videoSrc = '/animate.gif'
     let steps = [
         {
             name: "Add to cart",
@@ -100,15 +101,17 @@ const skills = [
     let showSkills = false
     let imageBounce = false
 
+    
+        
     onMount(() => {
-    // Trigger skills display after a delay
-    setTimeout(() => {
-      showSkills = true;
-    }, 100); // 100ms delay
+        console.log("hi")
+        // Initialize IntersectionObserver
+     
 
     // Trigger image bounce on load
     imageBounce = true;
   });
+  
 </script>
 
 <main class="flex flex-col flex-1 p-4">
@@ -120,9 +123,9 @@ const skills = [
             class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"
         >
             <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
-                Hi! I'm <span class="poppins text-violet-400">Surendhar</span> S
+                Hi! I'm <span class="poppins text-violet-400 typewriter">Surendhar S</span>
                 <br />Full Stack
-                <span class="poppins text-violet-400">Developer</span>
+                <span class="poppins text-violet-400 ">Developer</span>
             </h2>
             <p class="text-base sm:text-lg md:text-xl">
                 My <span class="text-violet-400"> favorite tech</span> includes JavaScript (React, Angular, Svelte) ,
@@ -277,7 +280,7 @@ const skills = [
                 <img
                     src="https://github-readme-streak-stats.herokuapp.com/?user=SurendharSSenthil&theme=dark"
                     alt="GitHub Contributions"
-                    class="mx-auto"
+                    class="mx-auto hover:shadow-md hover:bg-violet-500 rounded-md hover:glow hover:shadow-violet-500/50 transition duration-300"
                 />
             </div>
         </div>
@@ -305,19 +308,16 @@ const skills = [
         <!-- <div bind:this={animationContainer} style="width: 200px; height: 200px;" class="bg-transparent"></div> -->
         <VideoPlayer src={"../coding.webm"} height="200px" width="200px"/>
         <!-- {#if showSkills} -->
-            <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex flex-wrap justify-center gap-4 ">
                 {#each skills as skill, i (skill.name)}
-                    <div
-                        class="flex items-center gap-2 bg-transparent border border-transparent hover:border-violet-900 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/50 hover:glow rounded-full py-2 px-4 transition duration-300"
-                        in:fade={{ delay: 250 * i, duration: 300 }}
-                    >
-                        <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
-                        <span class="md:text-lg text-sm">{skill.name}</span>
-                    </div>
+                        <div class="bg-slate-950 relative anim text-center flex flex-row items-center justify-between gap-3 rounded-3xl">
+                            <i class={skill.icon + " text-2xl"} style="color: {skill.color};"></i>
+                            <span class="md:text-lg text-sm">{skill.name}</span>
+                        </div>
+                   
                 {/each}
             </div>
         <!-- {/if} -->
-        
         </div>
     </section>
     
@@ -334,6 +334,76 @@ const skills = [
   }
 
    
+.animated {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.in-view {
+    opacity: 1;
+}
+   .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    width: 10ch; 
+    animation: typing 3s steps(10, end) 1s 1 normal both , blink 500ms steps(40) infinite;
+    font-family: 'Poppins', sans-serif;
+  }
+  .anim{
+        padding: 6px 10px;
+    }
+    @property --angle{
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+    }
+    .anim:hover::after, .anim:hover::before{
+        content: '';
+        position: absolute;
+        height: 104%;
+        width: 104%;
+        background-image: conic-gradient(from var(--angle),transparent 30%,violet, indigo, orange);
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        /* padding: 14px; */
+        border-radius: inherit;
+        animation: 1s spin linear infinite;
+
+    }
+    .anim::before{
+        filter: blur(1.5rem);
+        /* opacity: 0.7; */
+    }
+    @keyframes spin{
+        from{
+            --angle: 0deg;
+        }to{
+            --angle: 360deg;
+        }
+    }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 10ch; 
+    }
+  }
+
+  @keyframes blink {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: violet;
+    }
+  }
+
 
   @keyframes bounce {
     0%, 50%, 80%, 100% {

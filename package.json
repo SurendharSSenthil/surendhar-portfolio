@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"lottie-web": "^5.12.2"
+		"lottie-web": "^5.12.2",
+		"three": "^0.168.0"
 	}
 }
