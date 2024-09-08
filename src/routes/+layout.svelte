@@ -1,6 +1,6 @@
 <script>
     import Footer from "../components/Footer.svelte";
-    import Header from "../components/Header.svelte";
+    // import Header from "../components/Header.svelte";
     import "../app.css";
     let y;
     let innerWidth = 0;
@@ -27,8 +27,8 @@
             <i class="fa-solid fa-arrow-up" />
         </button>
     </div>
-    <Header {y} {innerHeight}/>
-    <slot />
+    <!-- <Header {y} {innerHeight} {cool}/> -->
+    <slot  {y} {innerHeight}/>
     <Footer />
 </div>
 <svelte:window bind:scrollY={y} bind:innerHeight bind:innerWidth />

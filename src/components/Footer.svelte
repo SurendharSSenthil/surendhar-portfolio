@@ -15,7 +15,7 @@ onMount(() => {
     </p>
     <div class="flex flex-col sm:flex-row justify-between items-center sm:gap-4 gap-12 w-full">
      <div class="flex justify-center items-center sm:w-1/2">
-            <img src={"/Contact.png"} alt="contact" class="max-h-80 w-auto object-contain hover:shadow-[0_0_10px_rgba(138,43,226,0.8)]" />
+            <img src={contact} alt="contact" class="max-h-80 w-auto object-contain hover:shadow-[0_0_10px_rgba(138,43,226,0.8)]" />
         </div>
         <div class="flex flex-col gap-4 items-center justify-center sm:w-1/2 text-center sm:text-left">
             <p>

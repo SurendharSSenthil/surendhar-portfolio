@@ -5,7 +5,22 @@
     import Step from "./Step.svelte";
     import VideoPlayer from './VideoPlayer.svelte';
     
+    export let y;
+    $:cool = "#a78bfa";
 
+    //  import { createEventDispatcher } from 'svelte';
+    // const dispatch = createEventDispatcher();
+    // $: cools = cool;
+    function setCool(val) {
+        // dispatch('message', { text: val });
+        console.log("hi");
+        cool = val;
+    }
+
+    export let tabs = [
+        { name: "Projects", link: "#projects" },
+        { name: "About me", link: "#about" }
+    ];
     // let animationContainer;
 
     // onMount(() => {
@@ -114,6 +129,40 @@ const skills = [
   
 </script>
 
+<header
+    class={`sticky z-[10] top-0 duration-200 px-6 flex items-center justify-between border-b border-solid ${
+        y > 0
+            ? "py-4 bg-slate-950 border-violet-950"
+            : "py-6 bg-transparent border-transparent"
+    }`}
+>
+    <h1 class="font-medium flex flex-row gap-4">
+        <div>
+            <b class="font-bold poppins">Surendhar</b> <span class="">Senthil</span>
+        </div>
+        <div class="flex gap-2 items-center">
+            
+            <!-- <button on:click={cool=}>Change Color</button> -->
+            <button class="bg-red-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#f87171"}></button>
+            <button class="bg-orange-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#fdba74"}></button>
+            <button class="bg-yellow-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#facc15"}></button>
+            <button class="bg-blue-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#60a5fa"}></button>
+            <button class="bg-green-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#34d399"}></button>
+        </div>
+    </h1>
+    <div class="sm:flex items-center gap-4 hidden">
+        {#each tabs as tab, index}
+            <a
+                href={tab.link}
+                class="duration-200 hover:text-violet-400"
+                target={index === 2 ? "_blank" : ""}
+            >
+                <p>{tab.name}</p>
+            </a>
+        {/each}
+    </div>
+</header>
+
 <main class="flex flex-col flex-1 p-4">
     <section
         id="introPage"
@@ -123,12 +172,12 @@ const skills = [
             class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"
         >
             <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl" >
-                Hi! I'm <span class="poppins text-violet-400 typewriter">Surendhar S</span>
+                Hi! I'm <span class="poppins  typewriter" style:color={cool}>Surendhar S</span>
                 <br />Full Stack
-                <span class="poppins text-violet-400 ">Developer</span>
+                <span class="poppins " style:color={cool}>Developer</span>
             </h2>
             <p class="text-base sm:text-lg md:text-xl">
-                My <span class="text-violet-400"> favorite tech</span> includes JavaScript (React, Angular, Svelte) ,
+                My <span style:color={cool}> favorite tech</span> includes JavaScript (React, Angular, Svelte) ,
                 TailwindCSS, Node.js + Express.js & MongoDB!
             </p>
             <!-- <button
