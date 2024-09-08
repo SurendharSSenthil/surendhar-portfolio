@@ -122,7 +122,7 @@ const skills = [
         <div
             class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"
         >
-            <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
+            <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl" >
                 Hi! I'm <span class="poppins text-violet-400 typewriter">Surendhar S</span>
                 <br />Full Stack
                 <span class="poppins text-violet-400 ">Developer</span>
@@ -165,10 +165,12 @@ const skills = [
             /> -->
     </section>
     <section class="py-20 lg:py-32 flex flex-col gap-24" id="projects">
-        <div class="flex flex-col gap-2 text-center">
-            <h6 class="text-large sm:text-xl md:text-2xl">
-                A few of my creative endeavors.
-            </h6>
+       <div class="group flex flex-col relative gap-[10px]">
+            <h5 class="text-center relative">Few of my creative endeavors</h5>
+            <!-- Animated Line with Gap -->
+            <!-- <div class="relative"> -->
+            <div class="absolute top-10 left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+            <!-- </div> -->
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
             <Step step={steps[1]}>
@@ -238,7 +240,7 @@ const skills = [
     <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
         {#each benefits as benefit, index (benefit.name)}
         <div class="group flex flex-col relative pb-2">
-            <div class="flex gap-6 sm:gap-8" in:fade={{ duration: 400 }}>
+            <div class="flex gap-6 sm:gap-8" transition:fade={{ delay: 250, duration: 300 }}>
                 <p class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold">
                     0{index + 1}
                 </p>
