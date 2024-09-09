@@ -357,7 +357,7 @@ const skills = [
         <div class='flex md:flex-row flex-col justify-between items-center gap-8 '>
         <!-- <VideoPlayer width="600" height="600"/> -->
         <!-- <div bind:this={animationContainer} style="width: 200px; height: 200px;" class="bg-transparent"></div> -->
-        <VideoPlayer src={"../coding.webm"} height="200px" width="200px"/>
+        <VideoPlayer src={"../coding.webm"} height="200px" width="200px" class="anim relative"/>
         <!-- {#if showSkills} -->
             <div class="flex flex-wrap justify-center gap-4 ">
                 {#each skills as skill, i (skill.name)}
