@@ -4,18 +4,21 @@
     import lottie from 'lottie-web';
     import Step from "./Step.svelte";
     import VideoPlayer from './VideoPlayer.svelte';
+    import experience from '/experience.jpg';
     
     export let y;
-    $:cool = "#a78bfa";
+    let cool = "#a78bfa";
 
     //  import { createEventDispatcher } from 'svelte';
     // const dispatch = createEventDispatcher();
     // $: cools = cool;
-    function setCool(val) {
-        // dispatch('message', { text: val });
-        console.log("hi");
-        cool = val;
-    }
+    const setCool = (val) => {
+        alert("hi")
+    };
+
+    const buttonClicked = () => {
+        console.log("Button was clicked!");  // Direct check
+    };
 
     export let tabs = [
         { name: "Projects", link: "#projects" },
@@ -140,14 +143,25 @@ const skills = [
         <div>
             <b class="font-bold poppins">Surendhar</b> <span class="">Senthil</span>
         </div>
-        <div class="flex gap-2 items-center">
-            
-            <!-- <button on:click={cool=}>Change Color</button> -->
-            <button class="bg-red-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#f87171"}></button>
-            <button class="bg-orange-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#fdba74"}></button>
-            <button class="bg-yellow-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#facc15"}></button>
-            <button class="bg-blue-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#60a5fa"}></button>
-            <button class="bg-green-400 w-[8px] h-[15px] rounded-sm" on:click={cool="#34d399"}></button>
+         <div class="flex gap-2 items-center">
+            <button class="bg-violet-400 w-[12px] h-[20px] rounded-sm" on:click={buttonClicked} 
+  tabindex="0"
+  on:keydown="{(event) => event.key === 'Enter' && buttonClicked()}"></button>
+            <button class="bg-red-400 w-[12px] h-[20px] rounded-sm" on:click={buttonClicked} 
+  tabindex="0"
+  on:keydown="{(event) => event.key === 'Enter' && buttonClicked()}"></button>
+            <button class="bg-orange-400 w-[12px] h-[20px] rounded-sm" on:click={buttonClicked} 
+  tabindex="0"
+  on:keydown="{(event) => event.key === 'Enter' && buttonClicked()}"></button>
+            <button class="bg-yellow-400 w-[12px] h-[20px] rounded-sm" on:click={buttonClicked} 
+  tabindex="0"
+  on:keydown="{(event) => event.key === 'Enter' && buttonClicked()}"></button>
+            <button class="bg-blue-400 w-[12px] h-[20px] rounded-sm" on:click={buttonClicked} 
+  tabindex="0"
+  on:keydown="{(event) => event.key === 'Enter' && buttonClicked()}"></button>
+            <button class="bg-green-400 w-[12px] h-[20px] rounded-sm" on:click={buttonClicked} 
+  tabindex="0"
+  on:keydown="{(event) => event.key === 'Enter' && buttonClicked()}"></button>
         </div>
     </h1>
     <div class="sm:flex items-center gap-4 hidden">
@@ -180,14 +194,14 @@ const skills = [
                 My <span style:color={cool}> favorite tech</span> includes JavaScript (React, Angular, Svelte) ,
                 TailwindCSS, Node.js + Express.js & MongoDB!
             </p>
-            <!-- <button
+            <!-- <cbutton
                 class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
             >
                 <div
                     class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
                 />
                 <h4 class="relative z-9">Get in touch &rarr;</h4>
-            </button> -->
+            </cbutton> -->
         </div>
        <!-- <div class="relative shadow-2xl grid place-items-center">
     <img
@@ -272,7 +286,6 @@ const skills = [
     id="about"
     class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative"
 >
-    <!-- Header Section with Animated Lines -->
     <div
         class="flex flex-col gap-2 text-center relative py-4 before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 before:transition-all before:duration-300 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 after:transition-all after:duration-300"
     >
@@ -300,12 +313,53 @@ const skills = [
                     <p>{benefit.description}</p>
                 </div>
             </div>
-            <!-- Animated Line with Gap -->
             <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 mt-4"></div>
         </div>
         {/each}
     </div>
 </section>
+        <section
+    id="experience"
+    class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-8 sm:gap-20 md:gap-10 relative"
+>
+    <div
+        class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4"
+    >
+        <h6 class="text-large sm:text-xl md:text-2xl">
+            Curious about my journey in the tech world?
+        </h6>
+        <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
+            My <span class="poppins text-violet-400">Experience</span>
+        </h3>
+    </div>
+
+    <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">
+        Here's a quick look at what I've built and achieved.
+    </p>
+    <div  class="flex md:flex-row flex-col items-center jusitfy-center gap-4">
+    <img src={experience} alt="contact" class="max-h-80 w-auto object-contain rounded-md hover:shadow-[0_0_10px_rgba(138,43,226,0.8)] duration-200" />
+    <div class="flex flex-col gap-10 w-full mx-auto max-w-[800px]">
+        <!-- Experience Details -->
+        <div class="flex justify-center">
+            <ul class="list-disc text-left px-4 md:px-8 lg:px-16 ">
+                <li class="mb-4 group relative">
+                    <h4 class="font-bold text-xl md:text-2xl">Full Stack Developer Intern @ TNEA - Tamilnadu Engineering Admissions</h4>
+                    <p class="text-lg md:text-xl text-gray-500 hover:text-violet-500 duration-150">Feb 2024 - Aug 2024</p>
+                    <p class="poppins text-gray-500">
+                         Built a robust MERN stack seat matrix application. Successfully deployed it on AWS server, ensuring scalability and reliability across multiple institutions.
+                    </p>
+                    <div class="absolute bottom-[-1] left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 mt-4"></div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <p class="mx-auto">
+        Want more details on my journey? Check out my <a href="https://linkedin.com/in/SurendharSSenthil" class="text-violet-400">LinkedIn</a>.
+    </p>
+</section>
+
         <section
         id="github-contributions"
         class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-8 sm:gap-20 md:gap-10 relative"

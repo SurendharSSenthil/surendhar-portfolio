@@ -29,6 +29,7 @@
     </div>
     <!-- <Header {y} {innerHeight} {cool}/> -->
     <slot  {y} {innerHeight}/>
+
     <Footer />
 </div>
 <svelte:window bind:scrollY={y} bind:innerHeight bind:innerWidth />
