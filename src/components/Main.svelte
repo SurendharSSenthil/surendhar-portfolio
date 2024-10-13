@@ -73,6 +73,13 @@
                 "The Attendance Management System is a comprehensive tool for tracking and managing student attendance. Built with the MERN stack, it features real-time data handling, a user-friendly interface, and dynamic reporting capabilities. The system allows for efficient attendance recording, viewing, and analysis, making it ideal for educational institutions to streamline attendance processes.",
                 href:"https://github.com/SurendharSSenthil/attendance-manager"
         },
+        {
+            name: "MyVerse",
+            icon: "fa-regular fa-pen-to-square",
+            description:
+                "MyVerse is a personal blog where readers can dive into my thoughts and share feedback through comments, likes, and dislikes. Built with the powerful MERN stack, it delivers a seamless, interactive, and dynamic reading experience.",
+            href: "https://blog-client-ten-jade.vercel.app/"
+        }
     ];
 
     let benefits = [
@@ -102,7 +109,7 @@ const skills = [
     { name: 'JavaScript', icon: 'fab fa-js', color: '#F7E04C' },
     { name: 'React', icon: 'fab fa-react', color: '#61DAFB' },
     { name: 'Angular', icon: 'fab fa-angular', color: '#DD0031' },
-    { name: 'Svelte', icon: 'fab fa-svelte', color: '#FF3E00' },
+    { name: 'Svelte', icon: 'fab fa-svelte', color: '#DD0031' },
     { name: 'HTML', icon: 'fab fa-html5', color: '#E34F26' },
     { name: 'CSS', icon: 'fab fa-css3-alt', color: '#1572B6' },
     { name: 'Next.js', icon: 'fab fa-js-square', color: '#61DAFB' },
@@ -163,6 +170,7 @@ const skills = [
   tabindex="0"
   on:keydown="{(event) => event.key === 'Enter' && buttonClicked()}"></button>
         </div>
+        
     </h1>
     <div class="sm:flex items-center gap-4 hidden">
         {#each tabs as tab, index}
@@ -194,14 +202,19 @@ const skills = [
                 My <span style:color={cool}> favorite tech</span> includes JavaScript (React, Angular, Svelte) ,
                 TailwindCSS, Node.js + Express.js & MongoDB!
             </p>
-            <!-- <cbutton
+            <a href="https://blog-client-ten-jade.vercel.app/" target="_blank">
+            <button
                 class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
+                
             >
                 <div
                     class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
                 />
-                <h4 class="relative z-9">Get in touch &rarr;</h4>
-            </cbutton> -->
+                <h4 class="relative z-9 font-semibold">
+                    My<span class="text-violet-500 font-semibold">Verse</span> &rarr;
+                </h4>
+            </button>
+    </a>
         </div>
        <!-- <div class="relative shadow-2xl grid place-items-center">
     <img
@@ -279,6 +292,15 @@ const skills = [
         >. It facilitates real-time attendance tracking, dynamic reporting, and an intuitive user interface to streamline attendance management for educational institutions.
     </p>
 </Step>
+<Step step={steps[5]}>
+    <p>
+        <strong class="text-violet-400">MyVerse</strong> is a personal blog built with the 
+        <strong class="text-violet-400"> MERN Stack (MongoDB, Express.js, React, Node.js)</strong>, offering a 
+        seamless and interactive platform where readers can explore, comment, like, and dislike posts. 
+        It's designed to provide an engaging reading experience, bringing thoughts and ideas to life.
+    </p>
+</Step>
+
 
         </div>
     </section>

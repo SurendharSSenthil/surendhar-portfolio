@@ -27,21 +27,12 @@
 			<div class="absolute inset-0" id="particles-js"></div>
 		</div>
 
-		<!-- Make sure this script comes after the particles.js script -->
 		<script>
-			window.addEventListener("load", function () {
-				particlesJS.load("particles-js", "/particles.json", function () {
-					console.log("particles loaded");
+			window.addEventListener('load', function () {
+				particlesJS.load('particles-js', '/particles.json', function () {
+					console.log('particles loaded');
 				});
 			});
-			// window.addEventListener("scroll", function () {
-			// 	var scrollPosition =
-			// 		window.pageYOffset || document.documentElement.scrollTop;
-			// 	var particlesElement = document.getElementById("particles-js");
-
-			// 	particlesElement.style.transform =
-			// 		"translateY(" + scrollPosition + "px)";
-			// });
 		</script>
 	</body>
 </html>
@@ -53,7 +44,7 @@
 	}
 	body {
 		margin: 0;
-		font-family: "Poppins", sans-serif;
+		font-family: 'Poppins', sans-serif;
 		background-color: #0f172a;
 		overflow-x: hidden;
 	}

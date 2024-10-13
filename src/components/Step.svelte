@@ -2,6 +2,7 @@
     export let step;
 </script>
 
+
 <a
     href={step.href}
     target="_blank"
@@ -22,6 +23,7 @@
         </button>
     </div>
 </a>
+
 
 <style>
     .anim{
