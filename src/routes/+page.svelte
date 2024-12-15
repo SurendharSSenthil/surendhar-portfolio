@@ -1,7 +1,6 @@
 <!-- App.svelte -->
 <script>
-    import LandingPage from '../components/Main.svelte';
+  import LandingPage from "../components/Main.svelte";
 </script>
 
-    <LandingPage />
-
+<LandingPage />
