@@ -177,16 +177,29 @@
       class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"
     >
       <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
-        Hi! I'm <span class="poppins typewriter" style:color={cool}
-          >Surendhar S</span
+        Hi! I'm
+        <span
+          class="poppins typewriter transition-colors duration-300"
+          style="color: {cool};"
         >
-        <br />Full Stack
-        <span class="poppins" style:color={cool}>Developer</span>
+          Surendhar S
+        </span>
+        <br />
+        Full Stack
+        <span
+          class="poppins transition-colors duration-300"
+          style="color: {cool};"
+        >
+          Developer
+        </span>
       </h2>
-      <p class="text-base sm:text-lg md:text-xl">
-        My <span style:color={cool}> favorite tech</span> includes JavaScript (React,
-        Angular, Svelte) , TailwindCSS, Node.js + Express.js & MongoDB!
+      <p class="text-base sm:text-lg md:text-xl transition-colors duration-300">
+        My <span style="color: {cool};" class="transition-colors duration-300"
+          >favorite tech</span
+        > includes JavaScript (React, Angular, Svelte), TailwindCSS, Node.js + Express.js
+        & MongoDB!
       </p>
+
       <a href="https://blog-client-ten-jade.vercel.app/" target="_blank">
         <button
           class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
