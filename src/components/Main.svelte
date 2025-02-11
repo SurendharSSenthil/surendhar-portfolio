@@ -393,18 +393,20 @@
               </p>
               <ul class="poppins text-gray-500 list-disc pl-6">
                 <li>
-                  Built a robust MERN stack seat matrix portal. Deployed on <strong
-                    >AWS EC2</strong
-                  >
-                  with <strong>NGINX load balancing</strong> for high availability.
+                    Developed <strong>seat matrix portal</strong> using the <strong>MERN stack </strong>, enabling colleges to efficiently input and manage seat data.
+                </li>
+                <li>
+                    Created an <strong>admin dashboard</strong> to display statistics and details of colleges that have filled the forms in the seat matrix portal.
+                </li>
+                <li>
+                    Deployed the applications on <strong>AWS EC2</strong> instance, leveraging <strong>load balancing using NGINX</strong> to ensure high availability and performance under varying loads.
                 </li>
                 <li>
                   Integrated <strong>AWS S3</strong> for secure, scalable document
                   storage.
                 </li>
                 <li>
-                  Enhanced UI with <strong>Ant Design</strong>, creating
-                  responsive, reusable components.
+                    Enhanced user experience with <strong>Ant Design</strong>, incorporating reusable components and responsive design for seamless navigation across devices.
                 </li>
               </ul>
               <p class="poppins text-gray-500"></p>
