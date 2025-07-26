@@ -364,60 +364,103 @@
       </h3>
     </div>
 
-    <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">
-      Here's a quick look at what I've built and achieved.
-    </p>
-    <div class="flex md:flex-row flex-col items-center jusitfy-center gap-4">
-      <img
-        src="/experience.jpg"
-        alt="contact"
-        class="max-h-80 w-auto object-contain rounded-md hover:shadow-[0_0_10px_rgba(138,43,226,0.8)] duration-200"
-      />
-      <div class="flex flex-col gap-10 w-full mx-auto max-w-[800px]">
-        <!-- Experience Details -->
-        <div class="flex justify-center">
-          <ul class="list-disc text-left px-4 md:px-8 lg:px-16">
-            <li class="mb-4 group relative">
-              <h4 class="font-bold text-xl md:text-2xl">
-                Full Stack Developer Intern @ TNEA - <a
-                  href="https://www.tneaonline.org/"
-                  target="_blank"
-                  class="hover:text-violet-500 duration-150"
-                  >Tamilnadu Engineering Admissions
-                </a>
-              </h4>
-              <p
-                class="text-lg md:text-xl text-gray-500 hover:text-violet-500 duration-150"
-              >
-                Feb 2024 - Aug 2024
-              </p>
-              <ul class="poppins text-gray-500 list-disc pl-6">
-                <li>
-                    Developed <strong>seat matrix portal</strong> using the <strong>MERN stack </strong>, enabling colleges to efficiently input and manage seat data.
-                </li>
-                <li>
-                    Created an <strong>admin dashboard</strong> to display statistics and details of colleges that have filled the forms in the seat matrix portal.
-                </li>
-                <li>
-                    Deployed the applications on <strong>AWS EC2</strong> instance, leveraging <strong>load balancing using NGINX</strong> to ensure high availability and performance under varying loads.
-                </li>
-                <li>
-                  Integrated <strong>AWS S3</strong> for secure, scalable document
-                  storage.
-                </li>
-                <li>
-                    Enhanced user experience with <strong>Ant Design</strong>, incorporating reusable components and responsive design for seamless navigation across devices.
-                </li>
-              </ul>
-              <p class="poppins text-gray-500"></p>
-              <div
-                class="absolute bottom-[-1] left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 mt-4"
-              ></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl text-center mb-8">
+  Here's a quick look at what I've built and achieved.
+</p>
+
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 px-4">
+  <!-- Experience Image -->
+  <img
+    src="/experience.jpg"
+    alt="experience"
+    class="max-h-80 w-auto object-contain rounded-md hover:shadow-[0_0_10px_rgba(138,43,226,0.8)] duration-200"
+  />
+
+  <!-- Experience Details -->
+  <div class="flex flex-col gap-10 w-full max-w-[800px]">
+    <ul class="list-none text-left space-y-12">
+      <!-- TNEA Internship -->
+      <li class="group relative">
+        <h4 class="font-bold text-xl md:text-2xl">
+          Full Stack Developer Intern @ TNEA - 
+          <a
+            href="https://www.tneaonline.org/"
+            target="_blank"
+            class="hover:text-violet-500 duration-150"
+          >
+            Tamilnadu Engineering Admissions
+          </a>
+        </h4>
+        <p class="text-lg md:text-xl text-gray-500 hover:text-violet-500 duration-150">
+          Feb 2024 - Aug 2024
+        </p>
+        <ul class="poppins text-gray-500 list-disc pl-6 mt-2 space-y-2">
+          <li>
+            Developed a <strong>seat-matrix portal</strong> deployed statewide for <strong>500+ colleges</strong> across Tamil Nadu to submit their government-sanctioned student intake.
+          </li>
+          <li>
+            Streamlined data entry for over <strong>200,000 seats</strong>, replacing manual processes with an efficient online system.
+          </li>
+          <li>
+            Built an <strong>admin dashboard</strong> using <strong>Next.js</strong>, enabling real-time insights into college submissions and reducing admin overhead by <strong>30%</strong>.
+          </li>
+          <li>
+            Deployed on <strong>AWS EC2</strong> with <strong>NGINX</strong>, ensuring <strong>99.9% uptime</strong> and scalable performance under varying traffic loads.
+          </li>
+          <li>
+            Integrated <strong>AWS S3</strong> for secure and efficient document storage and retrieval.
+          </li>
+          <li>
+            Acted as the <strong>primary point of contact</strong> for bug fixes and user support, maintaining smooth operation with minimal downtime.
+          </li>
+        </ul>
+        <div
+          class="absolute bottom-[-1] left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 mt-4"
+        ></div>
+      </li>
+      <!-- C1X Internship -->
+      <li class="group relative">
+        <h4 class="font-bold text-xl md:text-2xl">
+          Software Engineering Intern @ 
+          <a
+            href="https://c1exchange.com/"
+            target="_blank"
+            class="hover:text-violet-500 duration-150"
+          >
+            C1X AdTech Pvt Ltd
+          </a>
+        </h4>
+        <p class="text-lg md:text-xl text-gray-500 hover:text-violet-500 duration-150">
+          Dec 2024 – Present
+        </p>
+        <ul class="poppins text-gray-500 list-disc pl-6 mt-2 space-y-2">
+          <li>
+            Engineered scalable REST APIs using <strong>NestJS</strong> with modular architecture.
+          </li>
+          <li>
+            Reduced API latency by <strong>30%</strong> via <strong>Redis caching</strong>.
+          </li>
+          <li>
+            Managed <strong>MySQL</strong> data with <strong>TypeORM</strong> (entities, repos).
+          </li>
+          <li>
+            Integrated <strong>Elasticsearch</strong> for efficient indexed search, boosting retrieval speed by <strong>40%</strong>.
+          </li>
+          <li>
+            Built <strong>Kibana dashboards</strong> for real-time monitoring and analytics.
+          </li>
+          <li>
+            Collaborated using <strong>Agile practices</strong> and daily stand-ups.
+          </li>
+        </ul>
+        <div
+          class="absolute bottom-[-1] left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 mt-4"
+        ></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
     <p class="mx-auto">
       Want more details on my journey? Check out my <a
