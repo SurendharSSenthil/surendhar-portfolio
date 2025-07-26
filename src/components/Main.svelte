@@ -435,28 +435,30 @@
         </p>
         <ul class="poppins text-gray-500 list-disc pl-6 mt-2 space-y-2">
           <li>
-            Engineered scalable REST APIs using <strong>NestJS</strong> with modular architecture.
+            Engineered scalable and modular REST APIs using <strong>NestJS</strong>
           </li>
           <li>
-            Reduced API latency by <strong>30%</strong> via <strong>Redis caching</strong>.
+            Boosted API performance by <strong>30%</strong> by implementing <strong>Redis caching</strong>, significantly reducing database hits and enhancing response times during peak traffic.
           </li>
           <li>
-            Managed <strong>MySQL</strong> data with <strong>TypeORM</strong> (entities, repos).
+            Managed data models and interactions using <strong>TypeORM</strong> with a <strong>MySQL</strong> database.
           </li>
           <li>
-            Integrated <strong>Elasticsearch</strong> for efficient indexed search, boosting retrieval speed by <strong>40%</strong>.
+            Integrated <strong>Elasticsearch</strong> for fast and flexible full-text search capabilities, improving retrieval performance by over <strong>40%</strong>.
           </li>
           <li>
-            Built <strong>Kibana dashboards</strong> for real-time monitoring and analytics.
+            Built real-time visual monitoring dashboards using <strong>Kibana</strong>.
           </li>
           <li>
-            Collaborated using <strong>Agile practices</strong> and daily stand-ups.
+            Followed <strong>Agile methodology</strong> with standups to ensure 
+            continuous collaboration and project alignment.
           </li>
         </ul>
         <div
           class="absolute bottom-[-1] left-0 w-full h-1 bg-purple-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 mt-4"
         ></div>
       </li>
+
     </ul>
   </div>
 </div>
