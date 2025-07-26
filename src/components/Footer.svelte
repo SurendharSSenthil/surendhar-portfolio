@@ -36,24 +36,11 @@
       />
     </div>
     <div
-      class="flex flex-col gap-4 items-center justify-center sm:w-1/2 text-center sm:text-left z-[1000]"
+      class="flex flex-col gap-4 items-start pl-6 justify-center sm:w-1/2 text-center sm:text-left z-[1000]"
     >
       <p>
         <b class="pr-2 text-violet-400">Email</b>
         surendharsenthil257@gmail.com
-      </p>
-      <p>
-        <b class="pr-2 text-violet-400">Instagram</b>
-        <a href="https://www.instagram.com/surendhar3525" target="_blank">
-          Surendhar3525
-          <sup>
-            <span class="text-xs scale-75 pl-0.5">
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xs scale-[75%]"
-              />
-            </span>
-          </sup>
-        </a>
       </p>
       <p>
         <b class="pr-2 text-violet-400">LinkedIn</b>
