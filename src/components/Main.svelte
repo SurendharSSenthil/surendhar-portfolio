@@ -392,7 +392,7 @@
           </a>
         </h4>
         <p class="text-lg md:text-xl text-gray-500 hover:text-violet-500 duration-150">
-          Feb 2024 - Aug 2024
+          Feb 2024 - Present
         </p>
         <ul class="poppins text-gray-500 list-disc pl-6 mt-2 space-y-2">
           <li>
